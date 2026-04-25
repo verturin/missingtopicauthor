@@ -49,10 +49,10 @@ Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur
 3. Supprimer le dossier `phpBB/ext/verturin/missingtopicauthor/`
 4. Purger le cache phpBB
 
-## Licence
+## License
 
-GPL-2.0-only — voir [license.txt](license.txt)
+GPL-2.0-only - See [LICENSE](LICENSE)
 
-## Auteur
+---
 
-verturin
+**Made with ❤️ for the phpBB community** · [verturin](https://github.com/verturin)
