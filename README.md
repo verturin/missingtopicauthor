@@ -1,5 +1,9 @@
 # Missing Topic Author
 
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/verturin/missingtopicauthor)
+[![phpBB](https://img.shields.io/badge/phpBB-3.3.14+-orange.svg)](https://www.phpbb.com/)
+[![License](https://img.shields.io/badge/license-GPL--2.0-green.svg)](LICENSE)
+
 Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur est absent ou inactif.
 
 ## Fonctionnalités
