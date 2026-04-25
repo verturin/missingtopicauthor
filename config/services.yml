@@ -1,0 +1,18 @@
+services:
+    verturin.missingtopicauthor.listener:
+        class: verturin\missingtopicauthor\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@user'
+            - '@language'
+        tags:
+            - { name: event.listener }
+
+    verturin.missingtopicauthor.acp.controller:
+        class: verturin\missingtopicauthor\controller\acp_controller
+        arguments:
+            - '@config'
+            - '@language'
+            - '@request'
+            - '@template'
