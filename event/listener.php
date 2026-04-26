@@ -32,6 +32,9 @@ class listener implements EventSubscriberInterface
 	/** @var bool */
 	protected static $fetched = false;
 
+	/** @var bool Premier post de la page déjà traité */
+	protected static $first_done = false;
+
 	public function __construct(
 		\phpbb\db\driver\driver_interface $db,
 		\phpbb\config\config $config,
@@ -70,18 +73,24 @@ class listener implements EventSubscriberInterface
 			return;
 		}
 
+		// Mode "premier post uniquement" : on ignore les posts suivants
+		$display_mode = $this->config['msu_display_mode'] ?? 'all';
+		if ($display_mode === 'first' && self::$first_done)
+		{
+			return;
+		}
+
 		// Une seule requête SQL pour toute la page
 		if (!self::$fetched)
 		{
-			self::$fetched  = true;
-			$user_id        = (int) $event['topic_data']['topic_poster'];
+			self::$fetched = true;
+			$user_id       = (int) $event['topic_data']['topic_poster'];
 
-			$sql             = 'SELECT user_lastvisit, user_type FROM ' . USERS_TABLE . ' WHERE user_id = ' . $user_id;
-			$result          = $this->db->sql_query($sql);
+			$sql              = 'SELECT user_lastvisit, user_type FROM ' . USERS_TABLE . ' WHERE user_id = ' . $user_id;
+			$result           = $this->db->sql_query($sql);
 			self::$author_row = $this->db->sql_fetchrow($result);
 			$this->db->sql_freeresult($result);
 
-			// Compte anonymisé par phpBB (USER_IGNORE = 2) traité comme absent
 			if (self::$author_row && (int) self::$author_row['user_type'] === USER_IGNORE)
 			{
 				self::$author_row = false;
@@ -98,6 +107,7 @@ class listener implements EventSubscriberInterface
 				$post_row['MSU_SHOW_MISSING']  = true;
 				$post_row['MSU_MISSING_MSG']   = $this->resolve_message($this->config['msu_missing_message']);
 				$post_row['MSU_MISSING_COLOR'] = $this->config['msu_missing_color'];
+				self::$first_done = true;
 			}
 			$event['post_row'] = $post_row;
 			return;
@@ -118,6 +128,7 @@ class listener implements EventSubscriberInterface
 				$post_row['MSU_INACTIVE_COLOR'] = $this->config['msu_inactive_color'];
 				$post_row['MSU_INACTIVE_TEXT']  = $this->language->lang('MSU_DAYS_AWAY', $days_away);
 				$post_row['MSU_LAST_VISIT']     = $this->user->format_date($last_visit);
+				self::$first_done = true;
 			}
 		}
 
