@@ -2,14 +2,14 @@
     "name": "verturin/missingtopicauthor",
     "type": "phpbb-extension",
     "description": "Display an alert banner on topics when the author is missing or inactive",
-	"homepage": "https://github.com/verturin/missingtopicauthor",
-    "version": "1.1.0",
+    "homepage": "https://github.com/verturin/missingtopicauthor",	
+    "version": "1.2.0",
     "keywords": ["phpbb", "extension", "topic", "author", "inactive"],
     "license": "GPL-2.0-only",
     "authors": [
         {
             "name": "verturin",
-			"homepage": "https://github.com/verturin",											 
+            "homepage": "https://github.com/verturin",			
             "role": "Lead Developer"
         }
     ],
@@ -20,7 +20,7 @@
     "extra": {
         "display-name": "Message sans utilisateur",
         "soft-require": {
-            "phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
+            "phpbb/phpbb": ">=3.3.11,<4.0.0@dev"
         },
 		"version-check": {
 			"host": "verturin.github.io",

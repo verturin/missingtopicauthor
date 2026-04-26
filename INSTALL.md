@@ -2,7 +2,7 @@
 
 ## Installation fraîche
 
-1. Télécharger la dernière release depuis GitHub
+1. Télécharger la dernière release depuis [GitHub](https://github.com/verturin/missingtopicauthor/releases)
 2. Décompresser l'archive
 3. Copier le dossier dans `phpBB/ext/verturin/missingtopicauthor/`
 4. Purger le cache : ACP → Général → Purger le cache

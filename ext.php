@@ -12,24 +12,21 @@ namespace verturin\missingtopicauthor;
 
 class ext extends \phpbb\extension\base
 {
-	/**
-	 * Check whether the extension can be enabled.
-	 * Requires phpBB >= 3.3.0 and PHP >= 7.2.
-	 *
-	 * @return array|bool
-	 */
 	public function is_enableable()
 	{
 		$errors = [];
 
+		$language = $this->container->get('language');
+		$language->add_lang('install_lang', 'verturin/missingtopicauthor');
+
 		if (phpbb_version_compare(PHPBB_VERSION, '3.3.0', '<'))
 		{
-			$errors[] = 'This extension requires phpBB 3.3.0 or newer.';
+			$errors[] = $language->lang('MSU_REQUIRES_PHPBB');
 		}
 
 		if (phpbb_version_compare(PHP_VERSION, '7.2.0', '<'))
 		{
-			$errors[] = 'This extension requires PHP 7.2.0 or newer.';
+			$errors[] = $language->lang('MSU_REQUIRES_PHP');
 		}
 
 		return empty($errors) ? true : $errors;
