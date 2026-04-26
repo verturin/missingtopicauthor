@@ -1,8 +1,8 @@
 # Missing Topic Author
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/verturin/missingtopicauthor)
-[![phpBB](https://img.shields.io/badge/phpBB-3.3.14+-orange.svg)](https://www.phpbb.com/)
-[![License](https://img.shields.io/badge/license-GPL--2.0-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/verturin/missingtopicauthor)
+[![phpBB](https://img.shields.io/badge/phpBB-3.3.11+-orange.svg)](https://www.phpbb.com/)
+[![License](https://img.shields.io/badge/license-GPL--2.0-green.svg)](license.txt)
 
 Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur est absent ou inactif.
 
@@ -10,15 +10,15 @@ Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur
 
 - **Bandeau rouge** : l'auteur a été supprimé ou anonymisé du forum
 - **Bandeau orange** : l'auteur ne s'est pas connecté depuis X jours (seuil configurable)
-- Affiché sur **tous les messages** du sujet
+- Affiché sur le **premier message** de chaque page ou sur **tous les messages** (choix ACP)
 - Messages traduits automatiquement en FR et EN selon la langue du visiteur
-- Entièrement configurable depuis l'ACP (messages, couleurs, seuil)
+- Entièrement configurable depuis l'ACP (messages, couleurs, seuil, position)
 
 ## Compatibilité
 
 | Logiciel | Version minimale |
 |----------|-----------------|
-| phpBB | 3.3.0 |
+| phpBB | 3.3.11 |
 | PHP | 7.2.0 |
 
 ## Installation
@@ -41,6 +41,7 @@ Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur
 | Bandeau orange — message | Texte affiché quand l'auteur est inactif |
 | Bandeau orange — seuil | Nombre de jours sans connexion (défaut : 180) |
 | Bandeau orange — couleur | Couleur hex (défaut : `#ff8800`) |
+| Position d'affichage | Premier message de chaque page / Tous les messages |
 
 ## Désinstallation
 
@@ -49,9 +50,9 @@ Extension phpBB 3.3 — affiche un bandeau d'alerte sur les sujets dont l'auteur
 3. Supprimer le dossier `phpBB/ext/verturin/missingtopicauthor/`
 4. Purger le cache phpBB
 
-## License
+## Licence
 
-GPL-2.0-only - See [LICENSE](LICENSE)
+GPL-2.0-only — voir [license.txt](license.txt)
 
 ---
 
