@@ -1,0 +1,144 @@
+<!-- INCLUDE overall_header.html -->
+
+<a id="maincontent"></a>
+
+<h1>{L_ACP_MSU_TITLE}</h1>
+
+<p>{L_ACP_MSU_SETTINGS}</p>
+
+<form id="msu_settings" method="post" action="{U_ACTION}">
+
+	<fieldset>
+		<legend>{L_ACP_MSU_GENERAL}</legend>
+
+		<dl>
+			<dt>
+				<label for="msu_enabled">{L_ACP_MSU_ENABLE}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_ENABLE_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="msu_enabled" name="msu_enabled" value="1"<!-- IF MSU_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="msu_enabled" value="0"<!-- IF not MSU_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_MSU_MISSING_SECTION}</legend>
+		<p>{L_ACP_MSU_MISSING_SECTION_EXPLAIN}</p>
+
+		<dl>
+			<dt>
+				<label for="msu_show_missing">{L_ACP_MSU_SHOW_MISSING}{L_COLON}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="msu_show_missing" name="msu_show_missing" value="1"<!-- IF MSU_SHOW_MISSING --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="msu_show_missing" value="0"<!-- IF not MSU_SHOW_MISSING --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="msu_missing_message">{L_ACP_MSU_MISSING_MESSAGE}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_MISSING_MESSAGE_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<textarea id="msu_missing_message" name="msu_missing_message" rows="3" cols="60">{MSU_MISSING_MESSAGE}</textarea>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="msu_missing_color">{L_ACP_MSU_MISSING_COLOR}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_MISSING_COLOR_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input type="color" id="msu_missing_color" name="msu_missing_color" value="{MSU_MISSING_COLOR}" />
+				<input type="text" id="msu_missing_color_text" value="{MSU_MISSING_COLOR}" size="8" maxlength="7" pattern="^#[0-9a-fA-F]{6}$" readonly="readonly" />
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_MSU_INACTIVE_SECTION}</legend>
+		<p>{L_ACP_MSU_INACTIVE_SECTION_EXPLAIN}</p>
+
+		<dl>
+			<dt>
+				<label for="msu_show_inactive">{L_ACP_MSU_SHOW_INACTIVE}{L_COLON}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="msu_show_inactive" name="msu_show_inactive" value="1"<!-- IF MSU_SHOW_INACTIVE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="msu_show_inactive" value="0"<!-- IF not MSU_SHOW_INACTIVE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="msu_inactive_days">{L_ACP_MSU_INACTIVE_DAYS}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_INACTIVE_DAYS_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input type="number" id="msu_inactive_days" name="msu_inactive_days" value="{MSU_INACTIVE_DAYS}" min="0" max="3650" size="5" />
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="msu_inactive_message">{L_ACP_MSU_INACTIVE_MESSAGE}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_INACTIVE_MESSAGE_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<textarea id="msu_inactive_message" name="msu_inactive_message" rows="3" cols="60">{MSU_INACTIVE_MESSAGE}</textarea>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="msu_inactive_color">{L_ACP_MSU_INACTIVE_COLOR}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_INACTIVE_COLOR_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input type="color" id="msu_inactive_color" name="msu_inactive_color" value="{MSU_INACTIVE_COLOR}" />
+				<input type="text" id="msu_inactive_color_text" value="{MSU_INACTIVE_COLOR}" size="8" maxlength="7" pattern="^#[0-9a-fA-F]{6}$" readonly="readonly" />
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_MSU_DISPLAY_SECTION}</legend>
+
+		<dl>
+			<dt>
+				<label>{L_ACP_MSU_DISPLAY_MODE}{L_COLON}</label>
+				<br><span>{L_ACP_MSU_DISPLAY_MODE_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" name="msu_display_mode" value="first"<!-- IF MSU_DISPLAY_MODE == 'first' --> checked="checked"<!-- ENDIF --> /> {L_ACP_MSU_DISPLAY_FIRST}</label>
+				<label><input type="radio" class="radio" name="msu_display_mode" value="all"<!-- IF MSU_DISPLAY_MODE == 'all' --> checked="checked"<!-- ENDIF --> /> {L_ACP_MSU_DISPLAY_ALL}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		{S_FORM_TOKEN}
+	</fieldset>
+
+</form>
+
+<script>
+(function () {
+	function bind(colorId, textId) {
+		var c = document.getElementById(colorId);
+		var t = document.getElementById(textId);
+		if (!c || !t) { return; }
+		c.addEventListener('input', function () { t.value = c.value; });
+	}
+	bind('msu_missing_color', 'msu_missing_color_text');
+	bind('msu_inactive_color', 'msu_inactive_color_text');
+})();
+</script>
+
+<!-- INCLUDE overall_footer.html -->
