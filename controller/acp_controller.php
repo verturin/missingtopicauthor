@@ -92,6 +92,7 @@ class acp_controller
 			$inactive_input = $this->request->variable('msu_inactive_message', '', true);
 			$this->config->set('msu_inactive_message', $this->normalize_message($inactive_input, 'MSU_DEFAULT_INACTIVE_MSG'));
 			$this->config->set('msu_inactive_color', $this->sanitize_color($this->request->variable('msu_inactive_color', '#ff8800')));
+			$this->config->set('msu_display_mode', $this->request->variable('msu_display_mode', 'first'));
 
 			trigger_error($this->language->lang('ACP_MSU_SETTINGS_SAVED') . adm_back_link($this->u_action));
 		}
@@ -114,6 +115,7 @@ class acp_controller
 
 			'MSU_INACTIVE_MESSAGE' => $this->resolve_message($inactive_message),
 			'MSU_INACTIVE_COLOR'   => (string) $this->config['msu_inactive_color'],
+			'MSU_DISPLAY_MODE'     => (string) $this->config['msu_display_mode'],
 		]);
 	}
 
