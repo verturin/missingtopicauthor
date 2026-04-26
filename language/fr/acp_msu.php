@@ -42,4 +42,10 @@ $lang = array_merge($lang, [
 	'ACP_MSU_INACTIVE_MESSAGE_EXPLAIN' => 'Texte affiché dans le bandeau.',
 	'ACP_MSU_INACTIVE_COLOR'        => 'Couleur du bandeau "auteur inactif"',
 	'ACP_MSU_INACTIVE_COLOR_EXPLAIN' => 'Couleur de fond du bandeau (format hex, ex. #ff8800).',
+
+	'ACP_MSU_DISPLAY_SECTION'       => 'Position d’affichage du bandeau',
+	'ACP_MSU_DISPLAY_MODE'          => 'Position d’affichage',
+	'ACP_MSU_DISPLAY_MODE_EXPLAIN'  => 'Choisissez si le bandeau s’affiche uniquement au-dessus du premier message de chaque page, ou au-dessus de tous les messages.',
+	'ACP_MSU_DISPLAY_FIRST'         => 'Premier message de chaque page uniquement',
+	'ACP_MSU_DISPLAY_ALL'           => 'Tous les messages',
 ]);

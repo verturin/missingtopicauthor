@@ -42,4 +42,10 @@ $lang = array_merge($lang, [
 	'ACP_MSU_INACTIVE_MESSAGE_EXPLAIN' => 'Text displayed in the banner.',
 	'ACP_MSU_INACTIVE_COLOR'        => 'Inactive author banner color',
 	'ACP_MSU_INACTIVE_COLOR_EXPLAIN' => 'Background color of the banner (hex format, e.g. #ff8800).',
+
+	'ACP_MSU_DISPLAY_SECTION'       => 'Banner display position',
+	'ACP_MSU_DISPLAY_MODE'          => 'Display position',
+	'ACP_MSU_DISPLAY_MODE_EXPLAIN'  => 'Choose whether to display the banner above the first post only, or above every post in the topic.',
+	'ACP_MSU_DISPLAY_FIRST'         => 'First post of each page only',
+	'ACP_MSU_DISPLAY_ALL'           => 'All posts',
 ]);
