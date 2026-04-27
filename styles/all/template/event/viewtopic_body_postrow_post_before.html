@@ -1,9 +1,14 @@
-<!-- IF postrow.MSU_SHOW_MISSING or postrow.MSU_SHOW_INACTIVE -->
-<style>.msu-alert{color:#fff;padding:10px 12px;margin:10px 0;border-radius:5px;font-weight:bold;line-height:1.4;border-left:4px solid rgba(0,0,0,0.25);}.msu-alert small{display:block;margin-top:4px;font-weight:normal;opacity:0.9;}</style>
-<!-- ENDIF -->
+{% if postrow.MSU_SHOW_MISSING or postrow.MSU_SHOW_INACTIVE %}
+{% INCLUDECSS '@verturin_missingtopicauthor/msu.css' %}
+{% endif %}
 
-<!-- IF postrow.MSU_SHOW_MISSING -->
-<div class="msu-alert" style="background:{postrow.MSU_MISSING_COLOR};">{postrow.MSU_MISSING_MSG}</div>
-<!-- ELSEIF postrow.MSU_SHOW_INACTIVE -->
-<div class="msu-alert" style="background:{postrow.MSU_INACTIVE_COLOR};">{postrow.MSU_INACTIVE_MSG}<br><small>{L_MSU_LAST_VISIT}: {postrow.MSU_LAST_VISIT} — {postrow.MSU_INACTIVE_TEXT}</small></div>
-<!-- ENDIF -->
+{% if postrow.MSU_SHOW_MISSING %}
+<div class="msu-alert" style="background: {{ postrow.MSU_MISSING_COLOR }};">
+    {{ postrow.MSU_MISSING_MSG }}
+</div>
+{% elseif postrow.MSU_SHOW_INACTIVE %}
+<div class="msu-alert" style="background: {{ postrow.MSU_INACTIVE_COLOR }};">
+    {{ postrow.MSU_INACTIVE_MSG }}<br>
+    <span class="msu-alert-sub">{{ lang('MSU_LAST_VISIT') }}: {{ postrow.MSU_LAST_VISIT }} &mdash; {{ postrow.MSU_INACTIVE_TEXT }}</span>
+</div>
+{% endif %}
