@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v1.2.1
+
+### Nouvelles fonctionnalités
+
+- **Vérification session active** : le bandeau orange ne s'affiche plus si l'auteur a une session active sur le forum (moins d'une heure). Cela corrige le cas où `user_lastvisit` n'est pas encore mis à jour alors que l'auteur est connecté.
+
+---
+
 ## v1.2.0
 
 ### Nouvelles fonctionnalités
