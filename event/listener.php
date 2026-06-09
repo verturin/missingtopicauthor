@@ -86,6 +86,17 @@ class listener implements EventSubscriberInterface
 			self::$fetched = true;
 			$user_id       = (int) $event['topic_data']['topic_poster'];
 
+			// Vérifier si l'auteur a une session active — aucun bandeau si c'est le cas
+			$sql_session    = 'SELECT session_id FROM ' . SESSIONS_TABLE . ' WHERE session_user_id = ' . $user_id . ' AND session_time > ' . (time() - 3600);
+			$result_session = $this->db->sql_query($sql_session);
+			$has_session    = (bool) $this->db->sql_fetchrow($result_session);
+			$this->db->sql_freeresult($result_session);
+
+			if ($has_session)
+			{
+				return;
+			}
+
 			$sql              = 'SELECT user_lastvisit, user_type FROM ' . USERS_TABLE . ' WHERE user_id = ' . $user_id;
 			$result           = $this->db->sql_query($sql);
 			self::$author_row = $this->db->sql_fetchrow($result);

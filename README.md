@@ -1,6 +1,6 @@
 # Missing Topic Author
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/verturin/missingtopicauthor)
+[![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/verturin/missingtopicauthor)
 [![phpBB](https://img.shields.io/badge/phpBB-3.3.11+-orange.svg)](https://www.phpbb.com/)
 [![License](https://img.shields.io/badge/license-GPL--2.0-green.svg)](license.txt)
 
